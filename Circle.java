@@ -47,9 +47,29 @@ public class Circle {
         return radius;
     }// end get radius
     
+    // calculate and return the area of the circle
+    public double getArea(){
+      double a;
+      
+      a = radius * radius * PI;
+      
+      return a;
+    }// end getArea
+    
+    // calculate and return the diameter of the circle
+    public double getDiameter(){
+        return radius * 2;
+    } // end getrDiameter
+    
     //*** Setters ***
     public void setRadius(double r){
         radius = r;
     }// end set radius
     
+    // ***** other methods ****
+    public void printCircleDetails(){
+        System.out.println("Radius = " + getRadius());
+        System.out.println("Area = " + getArea());
+        System.out.println("Diameter = " + getDiameter());
+    }// end print deatils
 } // end of public class

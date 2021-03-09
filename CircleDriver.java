@@ -48,7 +48,19 @@ public class CircleDriver {  // begin class
         System.out.println("c1: " + c1.getRadius());
         
         circles[0] = c1;
+        circles[1] = c2;
+        circles[2] = new Circle(2.1);
+        
         System.out.println(circles[0].getRadius());
+        
+        System.out.println("Circle 1:");
+        // System.out.println("Radius = " + c1.getRadius());
+        // System.out.println("Area = " + c1.getArea());
+        // System.out.println("Diameter = " + c1.getDiameter());
+        c1.printCircleDetails();
+        
+        for(int i = 0; i < 3; i++)
+            circles[i].printCircleDetails();
         
     
         //DecimalFormat df1 = new DecimalFormat("##.###");
@@ -78,7 +90,7 @@ public class CircleDriver {  // begin class
         prompt += "you may need to add additional lines\n";
         prompt += "or delete some of these prompt lines.\n\n";
 
-        strin = JOptionPane.showInputDialog(bannerOut + prompt);	 
+        strin = JOptionPane.showInputDialog(bannerOut + prompt);     
 */
         // read a line of data from the external text file
 
