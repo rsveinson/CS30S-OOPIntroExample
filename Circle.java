@@ -46,6 +46,7 @@ public class Circle {
     public double getRadius(){
         return radius;
     }// end get radius
+
     
     // calculate and return the area of the circle
     public double getArea(){
@@ -72,4 +73,20 @@ public class Circle {
         System.out.println("Area = " + getArea());
         System.out.println("Diameter = " + getDiameter());
     }// end print deatils
+    
+    /*****************************************
+    * Description: override toString() to 
+    *               print the circle's radius
+    * 
+    * Interface:
+    * 
+    * @return       String  the circle's radius and associate
+    *               label
+    * ****************************************/
+    @Override
+    public String toString(){
+        String st;
+        st = "Radius: " + radius;
+        return st;
+    }// end toSTring
 } // end of public class

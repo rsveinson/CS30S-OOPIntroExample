@@ -57,6 +57,13 @@ public class CircleDriver {  // begin class
         // System.out.println("Radius = " + c1.getRadius());
         // System.out.println("Area = " + c1.getArea());
         // System.out.println("Diameter = " + c1.getDiameter());
+        
+        /* in the Circle class there is a method called
+         * printCircleDetails(), this is a utility method
+         * that prints all of the details of the state of a
+         * Circle object. This method is in place for convenience.
+         * 
+         */
         c1.printCircleDetails();
         
         for(int i = 0; i < 3; i++)
@@ -83,20 +90,13 @@ public class CircleDriver {  // begin class
         //fout.println(programInfo.getBanner());
             
     // ************************ get input **********************
-/* input will now come from an external file so there
-        will not normally be a need for a prompt
-    
-        prompt = "Enter your prompt text here. \n"; 
-        prompt += "you may need to add additional lines\n";
-        prompt += "or delete some of these prompt lines.\n\n";
-
-        strin = JOptionPane.showInputDialog(bannerOut + prompt);     
-*/
-        // read a line of data from the external text file
 
     // ************************ processing ***************************
-        
-
+        // to demonstrate the toString() method we will look at the 
+        // result of the following line of Java code.
+        // before and after we write the toString() method in the 
+        // Circle class.
+        System.out.println(c2);
 
     // ************************ print output ****************************
     
