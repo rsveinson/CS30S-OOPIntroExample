@@ -1,11 +1,11 @@
-/********************************************************************
+ /********************************************************************
  * Programmer:  sveinson
  * Class:  CS20S
  *
- * Assignment: Circle OOP Example
+ * Assignment: Testing ProgramInfo
  * 
- * Description: some examples of using the Circle class
- *              for some simple OOP demonstrations
+ * Description: some code to figure out how the ProgramInfo class
+ *              is going to work
  ***********************************************************************/
  
  // import java libraries here as needed
@@ -14,7 +14,7 @@
  //import java.text.DecimalFormat;
  import java.io.*;
 
-public class CircleDriver {  // begin class
+public class ProgramInfoTestDriver {  // begin class
     
     public static void main(String[] args)throws IOException {  // begin main
     
@@ -35,77 +35,54 @@ public class CircleDriver {  // begin class
         // new line character for file writing
         
     // ***** create objects *******
+    
         //DecimalFormat df1 = new DecimalFormat("##.###");
     
     // the ProgramInfo class has both a default and initialized constructor
     // so you can choose which model you want to employ
     
         //ProgramInfo programInfo = new ProgramInfo();
-        ProgramInfo programInfo = new ProgramInfo("Circle OOP Example.");
+        ProgramInfo programInfo = new ProgramInfo("Object Oriented Example");
         
         //BufferedReader fin = new BufferedReader(new FileReader("demo1Data.txt"));
         PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outFile.txt")));
         
     // ********** Print output Banner **********
 
-        //System.out.println(programInfo.getBanner("A1Q2"));
+        //System.out.println(programInfo.getBanner("A1Qasdfasdfasdf"));
         //fout.println(programInfo.getBanner("A1Q2"));
 
         System.out.println(programInfo.getBanner());
         fout.println(programInfo.getBanner());
             
     // ************************ get input **********************
+/* input will now come from an external file so there
+        will not normally be a need for a prompt
+    
+        prompt = "Enter your prompt text here. \n"; 
+        prompt += "you may need to add additional lines\n";
+        prompt += "or delete some of these prompt lines.\n\n";
+
+        strin = JOptionPane.showInputDialog(bannerOut + prompt);     
+*/
+        // read a line of data from the external text file
 
     // ************************ processing ***************************
+        
 
-        Circle[] circles = new Circle[10];
-        
-        Circle c1 = new Circle();
-        Circle c2 = new Circle(4.5);
-        //Circle c5 = new Circle(4.5, 6);
-        
-        //System.out.println("c1: " + c1);
-        System.out.println("c1: " + c1.getRadius());
-        System.out.println("c2: " + c2.getRadius());
-        //c1.radius = 3;
-        c1.setRadius(3.0);
-        System.out.println("c1: " + c1.getRadius());
-        
-        circles[0] = c1;
-        circles[1] = c2;
-        circles[2] = new Circle(2.1);
-        
-        System.out.println(circles[0].getRadius());
-        
-        System.out.println("Circle 1:");
-        // System.out.println("Radius = " + c1.getRadius());
-        // System.out.println("Area = " + c1.getArea());
-        // System.out.println("Diameter = " + c1.getDiameter());
-        
-        /* in the Circle class there is a method called
-         * printCircleDetails(), this is a utility method
-         * that prints all of the details of the state of a
-         * Circle object. This method is in place for convenience.
-         * 
-         */
-        c1.printCircleDetails();
-        
-        for(int i = 0; i < 3; i++)
-            circles[i].printCircleDetails();
-        System.out.println(c2);
 
     // ************************ print output ****************************
     
     
     // ******** closing message *********
         
-        //System.out.println(programInfo.getClosingMessage());
-        //fout.println(programInfo.getClosingMessage());
+        System.out.println(programInfo.getClosingMessage());
+        fout.println(programInfo.getClosingMessage());
         
     // ***** close streams *****
         
         //fin.close();                // close input buffer stream
-        //fout.close();               // close output stream
+        fout.close();               // close output stream
         
     }  // end main
 }  // end class
