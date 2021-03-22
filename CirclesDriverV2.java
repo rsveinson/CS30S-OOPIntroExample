@@ -30,6 +30,7 @@ public class CirclesDriverV2 {  // begin class
 
         String delim = "[ :]+"; // delimiter string for splitting input string
         String[] tokens;                        // string array for gathering input
+        BufferedReader fin;
         
         String nl = System.lineSeparator();
         // new line character for file writing
@@ -48,7 +49,14 @@ public class CirclesDriverV2 {  // begin class
         //ProgramInfo programInfo = new ProgramInfo();
         ProgramInfo programInfo = new ProgramInfo("Circle ArrayList Example");
         
-        BufferedReader fin = new BufferedReader(new FileReader("circData.txt"));
+        try{
+            fin = new BufferedReader(new FileReader("circData.txt"));
+        }
+        catch(FileNotFoundException e){
+           System.out.println("file not found");
+           fin = null;
+        }
+
         //PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outFile.txt")));
         
     // ********** Print output Banner **********
@@ -69,8 +77,13 @@ public class CirclesDriverV2 {  // begin class
         // access individual arraylist elements
         System.out.println("Circle 1: " + circles.get(0));
         
-        
-        strin = fin.readLine();
+        try{
+            strin = fin.readLine();
+        }// end try
+        catch(NullPointerException e){
+            System.out.println("nothing to read here.");
+            strin = null;
+        }// end catch
         
         while(strin != null){
             //System.out.println(strin);
@@ -93,12 +106,16 @@ public class CirclesDriverV2 {  // begin class
         // }// end for print circles
         
         //introducing the for each loop
+        // for(Circle cl: circles){
+           // System.out.println("Circle :" );
+           // System.out.format("Radius: %7.2f %s", cl.getRadius(), nl);
+           // System.out.format("Area: %7.2f %s", cl.getArea(), nl);
+           // System.out.format("Diameter: %7.2f %s", cl.getDiameter(), nl);
+           // System.out.println();            
+        // }// end for each loop
+        
         for(Circle cl: circles){
-           System.out.println("Circle :" );
-           System.out.format("Radius: %7.2f %s", cl.getRadius(), nl);
-           System.out.format("Area: %7.2f %s", cl.getArea(), nl);
-           System.out.format("Diameter: %7.2f %s", cl.getDiameter(), nl);
-           System.out.println();            
+           cl.printCircleDetails();           
         }// end for each loop
     
     // ******** closing message *********
@@ -107,8 +124,9 @@ public class CirclesDriverV2 {  // begin class
         //fout.println(programInfo.getClosingMessage());
         
     // ***** close streams *****
-        
-        fin.close();                // close input buffer stream
+    
+        if(fin != null)
+            fin.close();                // close input buffer stream
         //fout.close();               // close output stream
         
     }  // end main

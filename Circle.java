@@ -14,19 +14,27 @@
 public class Circle {
     //*** Class Variables ***
     
+    /* this static variable is shared by all instances
+     * of the Cirle class. If one Circle object changes its value
+     * it, the value, changes for all Cirlce objects.
+     */
+    public static int nextID = 1000;
     final double PI = 3.14159;      // could also use Math.PI()
     
     //*** Instance Variables ***
     
+    private int id = 0;
     private double radius = 0.0; 
     
     //*** Constructors ***
     // default/no-argument constructor
     public Circle(){
+        id = nextID++;
         radius = 0;
     } //end default constructor
     
     public Circle(double radius){
+        id = nextID++;
         this.radius = radius;
     }// end full-arg constructor
     
@@ -47,6 +55,9 @@ public class Circle {
         return radius;
     }// end get radius
 
+    public int getID(){
+        return id;
+    }// end getid
     
     // calculate and return the area of the circle
     public double getArea(){
@@ -69,6 +80,7 @@ public class Circle {
     
     // ***** other methods ****
     public void printCircleDetails(){
+        System.out.println("Circle ID: " + getID());
         System.out.println("Radius = " + getRadius());
         System.out.println("Area = " + getArea());
         System.out.println("Diameter = " + getDiameter());
@@ -86,7 +98,8 @@ public class Circle {
     @Override
     public String toString(){
         String st;
-        st = "Radius: " + radius;
+        st = "Circle ID: "+ getID();
+        st += "Radius: " + radius;
         return st;
     }// end toSTring
 } // end of public class
